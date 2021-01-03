@@ -1,0 +1,72 @@
+body {
+  background-color: #eee;
+  font-family: "Roboto", sans-serif;
+}
+/* Navbar */
+.sidebar {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+    url(../resources/dash.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  background-size: cover;
+  box-shadow: 5px 7px 25px #999;
+}
+.border-bottom {
+  border-bottom: 1px groove #eee;
+}
+.navbar-nav > .current > a {
+  transition: all 0.3s;
+  border-radius: 7px;
+  background-color: #ffbb00;
+  box-shadow: 2px 5px 10px #111;
+}
+
+.icon-parent {
+  position: relative;
+}
+.icon-bullet {
+  top: 4px;
+  left: 25px;
+  position: absolute;
+  background-color: #f44336;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    height: auto;
+  }
+  .top-navbar {
+    position: static;
+  }
+
+  .table-ctr-sacco {
+    width: 100vw;
+    overflow-x: scroll !important;
+  }
+}
+/* End navbar */
+
+/* Cards */
+.card-common {
+  box-shadow: 1px 2px 5px #999;
+  transition: all 0.4s;
+}
+.card-common:hover {
+  transform: translateY(-1px);
+  box-shadow: 2px 3px 15px #999;
+}
+/* End Cards */
+
+/* Tasklist */
+.task-border {
+  border-left: 3px solid #f66436;
+}
+/* End Tasklist */
+.sacco-config {
+  text-align: center;
+}

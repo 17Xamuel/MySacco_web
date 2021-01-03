@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <title>MySacco :: Save for the Future</title>
+    <link
+      rel="shortcut icon"
+      href="./resources/MySacco_200x200.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./fontawesome/css/all.css" />
+    <link rel="stylesheet" href="./footer.css" />
+    <style>
+      header {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        box-shadow: 2px 2px 5px #e2e2e2;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 100px;
+        position: sticky;
+        top: 0px;
+        z-index: 5;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 60%;
+      }
+      .nav-link {
+        padding: 5px;
+        color: black;
+      }
+      .nav-link:hover {
+        color: #ffbb00;
+      }
+      /*main*/
+      main {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+      .sacco-form {
+        width: 450px;
+        margin: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        /* height: 75vh; */
+      }
+
+      .-hform {
+        width: 100%;
+        font-size: 24px;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 15px;
+      }
+      .b-ctr {
+        margin: 15px 20px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .label {
+        font: 17px;
+        font-weight: 400;
+      }
+      /*width*/
+      .-w {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sacco">
+      <header>
+        <nav class="nav">
+          <a href="/" class="logo">
+            <img
+              src="./resources/MySacco_200x200.png"
+              alt="MYSACCO"
+              height="100px"
+              width="100px"
+            />
+          </a>
+          <a href="#" class="nav-link">New Sacco</a>
+          <a href="#" class="nav-link">Services</a>
+          <a href="#" class="nav-link">About</a>
+          <a href="#" class="nav-link">Partners &amp; Sponsers</a>
+          <a href="#" class="nav-link">Help</a>
+        </nav>
+        <button class="btn">DashBoard</button>
+      </header>
+      <main>
+        <div action="#" class="sacco-form -bx">
+          <div class="-hform">Register Under Your Sacco</div>
+          <form class="basic-info">
+            <div class="b-ctr">
+              <div class="-i-ctr">
+                <label for="sn">Sacco ID:</label>
+                <br />
+                <input type="text" class="-is -w" required />
+              </div>
+              <div class="-i-ctr">
+                <label for="sn">Name:</label>
+                <br />
+                <input type="text" class="-is -w" required />
+              </div>
+              <div class="-i-ctr">
+                <label for="sn">Phone Number:</label>
+                <br />
+                <input type="text" class="-is -w" required />
+              </div>
+              <div class="-i-ctr">
+                <label for="sn">Password:</label>
+                <br />
+                <input type="text" class="-is -w" required />
+              </div>
+              <button class="btn btn-sm" style="margin: 20px">Register</button>
+            </div>
+          </form>
+          <form class="basic-info">
+            <div class="b-ctr">
+              <h4 style="margin: 20px">Confirm Your Mobile Number</h4>
+              <div class="-i-ctr">
+                <label for="sn">SMS Code:</label>
+                <br />
+                <input type="text" class="-is -w" required />
+              </div>
+              <button class="btn btn-sm" style="margin: 20px">Confirm</button>
+              <p>
+                Did not Recieve The Code. Click <a href="">here</a> to
+                <a href="">Resend</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

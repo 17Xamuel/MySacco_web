@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <title>MySacco :: Save for the Future</title>
+    <link
+      rel="shortcut icon"
+      href="./resources/MySacco_200x200.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./fontawesome/css/all.css" />
+    <link rel="stylesheet" href="./footer.css" />
+    <style>
+      header {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        box-shadow: 2px 2px 5px #e2e2e2;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 100px;
+        position: sticky;
+        top: 0px;
+        z-index: 5;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 60%;
+      }
+      .nav-link {
+        padding: 5px;
+        color: black;
+      }
+      .nav-link:hover {
+        color: #ffbb00;
+      }
+      /*main*/
+      main {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+      .sacco-form {
+        width: 768px;
+        margin: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+      }
+      .-progress {
+        width: 250px;
+        margin: 10px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        position: sticky;
+        top: 110px;
+      }
+      .-progress > ul {
+        height: 50px;
+        width: 100%;
+        margin-bottom: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 0px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      .-hform {
+        width: 100%;
+        font-size: 24px;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 15px;
+      }
+      .-sub-header {
+        font-size: 18px;
+        padding: 10px 20px;
+      }
+      .b-ctr {
+        margin: 5px 20px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      .label {
+        font: 17px;
+        font-weight: 400;
+      }
+      /*fom members*/
+      .-members {
+        width: 100%;
+      }
+      ._no {
+        width: 55px;
+      }
+      ._ph {
+        width: 120px;
+      }
+      .-check {
+        padding: 20px;
+        position: relative;
+      }
+      .checkbox {
+        position: absolute;
+        left: 5px;
+      }
+      .-check-text {
+        padding: 0px 10px;
+        display: inline-block;
+      }
+      /*for members end*/
+    </style>
+  </head>
+  <body>
+    <div class="sacco">
+      <header>
+        <nav class="nav">
+          <a href="/" class="logo">
+            <img
+              src="./resources/MySacco_200x200.png"
+              alt="MYSACCO"
+              height="100px"
+              width="100px"
+            />
+          </a>
+          <a href="#" class="nav-link">New Sacco</a>
+          <a href="#" class="nav-link">Services</a>
+          <a href="#" class="nav-link">About</a>
+          <a href="#" class="nav-link">Partners &amp; Sponsers</a>
+          <a href="#" class="nav-link">Help</a>
+        </nav>
+        <button class="btn">DashBoard</button>
+      </header>
+      <main>
+        <div action="#" class="sacco-form -bx">
+          <div class="-hform">Register a New Sacco</div>
+          <form class="basic-info">
+            <h3 class="-sub-header">Add Sacco information:</h3>
+            <div class="b-ctr">
+              <label for="sn">Sacco Name:</label>
+              <br />
+              <input type="text" class="-is" required />
+              <br />
+              <label for="sn">Sacco ID:</label>
+              <br />
+              <input type="text" class="-is" required />
+              <br />
+              <label for="sn">Number of Members:</label>
+              <br />
+              <input type="text" class="-is" required />
+              <br />
+              <label for="sn">Minimum Saving:</label>
+              <br />
+              <input type="text" class="-is" required />
+              <br />
+              <label for="sn">Meeting Day:</label>
+              <br />
+              <select name="" class="-is" id="">
+                <option value="" hidden>Select Day</option>
+                <option value="Sunday">Sunday</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+              </select>
+              <br />
+              <label for="sn">Meeting Time:</label>
+              <br />
+              <input type="text" class="-is" required placeholder="From" />
+              --
+              <input type="text" class="-is" required placeholder="To" />
+              <br />
+              <label for="sn">Sacco Period(Months):</label>
+              <br />
+              <input type="text" class="-is" required />
+              <br />
+              <button class="btn btn-sm">Next</button>
+            </div>
+          </form>
+          <form class="basic-info">
+            <h3 class="-sub-header">Add Sacco Members:</h3>
+            <div class="b-ctr">
+              <table class="-members">
+                <thead>
+                  <tr class="_th">
+                    <th class="_no">No.</th>
+                    <th>Name</th>
+                    <th>Email.</th>
+                    <th>Phone No.</th>
+                    <th>Role</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="_no">
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td class="_ph">
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td>
+                      <select
+                        name=""
+                        class="-is"
+                        id=""
+                        required
+                        style="width: 120px"
+                      >
+                        <option value="" hidden>Select Role</option>
+                        <option value="Sunday">Member</option>
+                        <option value="Monday">Treasurer</option>
+                        <option value="Tuesday">Mobiliser</option>
+                        <option value="Wednesday">Chairpeson</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="_no">
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td class="_ph">
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td>
+                      <select
+                        name=""
+                        class="-is"
+                        id=""
+                        required
+                        style="width: 120px"
+                      >
+                        <option value="" hidden>Select Role</option>
+                        <option value="Sunday">Member</option>
+                        <option value="Monday">Treasurer</option>
+                        <option value="Tuesday">Mobiliser</option>
+                        <option value="Wednesday">Chairpeson</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="_no">
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td class="_ph">
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td>
+                      <select
+                        name=""
+                        class="-is"
+                        id=""
+                        required
+                        style="width: 120px"
+                      >
+                        <option value="" hidden>Select Role</option>
+                        <option value="Sunday">Member</option>
+                        <option value="Monday">Treasurer</option>
+                        <option value="Tuesday">Mobiliser</option>
+                        <option value="Wednesday">Chairpeson</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="_no">
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td class="_ph">
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td>
+                      <select
+                        name=""
+                        class="-is"
+                        id=""
+                        required
+                        style="width: 120px"
+                      >
+                        <option value="" hidden>Select Role</option>
+                        <option value="Sunday">Member</option>
+                        <option value="Monday">Treasurer</option>
+                        <option value="Tuesday">Mobiliser</option>
+                        <option value="Wednesday">Chairpeson</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="_no">
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td class="_ph">
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                      />
+                    </td>
+                    <td>
+                      <select
+                        name=""
+                        class="-is"
+                        id=""
+                        required
+                        style="width: 120px"
+                      >
+                        <option value="" hidden>Select Role</option>
+                        <option value="Sunday">Member</option>
+                        <option value="Monday">Treasurer</option>
+                        <option value="Tuesday">Mobiliser</option>
+                        <option value="Wednesday">Chairpeson</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </form>
+          <form class="basic-info">
+            <h3 class="-sub-header">Finish Up:</h3>
+            <div class="b-ctr">
+              <div class="-check">
+                <input type="checkbox" class="checkbox" />
+                <span class="-check-text">
+                  I Agree to have read the liscence Agreement, the terms and
+                  conditions assiociated with registering a sacco with My Sacco
+                </span>
+              </div>
+              <button class="btn btn-sm">Register</button>
+            </div>
+          </form>
+        </div>
+        <div class="-progress">
+          <ul class="-1 -bx">
+            <li>Add Sacco information</li>
+          </ul>
+          <ul class="-2 -bx">
+            <li>Add the Members</li>
+          </ul>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="first">
+          <h4 class="footer-h4">Explore Yummy</h4>
+          <ul class="footer-list">
+            <li><a href="#">How to Order</a></li>
+            <li><a href="#">Our Partners</a></li>
+            <li><a href="#">Staff</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="second">
+          <h4 class="footer-h4">Contact Us</h4>
+          <ul class="footer-list">
+            <li class="second-list">
+              <a href="">
+                <i class="fas fa-shopping-cart"></i>
+                Yummy Shoppers
+              </a>
+            </li>
+            <li class="second-list">
+              <a href="mailto:#">
+                <i class="fas fa-envelope"></i>
+                customer@yummy.com
+              </a>
+            </li>
+            <li class="second-list">
+              <a href="#">
+                <i class="fas fa-map-marker-alt"></i>
+                Lira Campus
+              </a>
+            </li>
+          </ul>
+          <form action="#">
+            <input
+              type="textbox"
+              name=""
+              id="comment"
+              placeholder="Leave a Comment"
+            />
+            <br />
+            <input
+              type="text"
+              name=""
+              id="customer-email"
+              placeholder="Email or Phone Number(Optional)"
+            />
+            <br />
+            <button class="footer-form-button">submit</button>
+          </form>
+        </div>
+        <div class="third">
+          <h4 class="footer-h4">Products &amp; Groceries</h4>
+          <ul class="footer-list">
+            <li><a href="#">New Product</a></li>
+            <li><a href="#">Most Ordered Products</a></li>
+            <li><a href="#">Rankings</a></li>
+            <li><a href="#">Request a Product</a></li>
+          </ul>
+        </div>
+        <div class="fourth">
+          <h4 class="footer-h4">Follow Us</h4>
+          <a href="" class="icon-button"><i class="fab fa-facebook-f"></i></a>
+          <a href="" class="icon-button"><i class="fab fa-twitter"></i></a>
+          <a href="" class="icon-button"><i class="fab fa-instagram"></i></a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
