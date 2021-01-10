@@ -38,6 +38,9 @@ ul {
   margin: 5px;
   background-color: #ffbb00;
 }
+.btn-main {
+  font-size: 16px;
+}
 .btn:hover {
   opacity: 0.8;
 }

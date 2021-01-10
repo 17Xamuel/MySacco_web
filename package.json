@@ -4,7 +4,7 @@
   "description": "Online Platform for saving funds",
   "main": "index.js",
   "scripts": {
-     "start": "node index",
+    "start": "node index",
     "dev": "nodemon index"
   },
   "repository": {
@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/XamuelUG/MySacco#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mongoose": "^5.11.10",
     "nodemon": "^2.0.6"
   }
 }

@@ -98,15 +98,15 @@
         font: 17px;
         font-weight: 400;
       }
-      /*fom members*/
+      /*form members*/
       .-members {
         width: 100%;
       }
       ._no {
-        width: 55px;
+        width: 40px;
       }
       ._ph {
-        width: 120px;
+        width: 175px;
       }
       .-check {
         padding: 20px;
@@ -135,7 +135,7 @@
               width="100px"
             />
           </a>
-          <a href="#" class="nav-link">New Sacco</a>
+          <a href="./new-sacco.html" class="nav-link">New Sacco</a>
           <a href="#" class="nav-link">Services</a>
           <a href="#" class="nav-link">About</a>
           <a href="#" class="nav-link">Partners &amp; Sponsers</a>
@@ -144,30 +144,52 @@
         <button class="btn">DashBoard</button>
       </header>
       <main>
-        <div action="#" class="sacco-form -bx">
+        <form
+          action="/new-sacco"
+          class="sacco-form -bx"
+          method="POST"
+          enctype="application/x-www-form-urlencoded"
+        >
           <div class="-hform">Register a New Sacco</div>
-          <form class="basic-info">
+          <div class="basic-info">
             <h3 class="-sub-header">Add Sacco information:</h3>
             <div class="b-ctr">
               <label for="sn">Sacco Name:</label>
               <br />
-              <input type="text" class="-is" required />
+              <input
+                type="text"
+                class="-is -name"
+                name="sacco_name"
+                required
+                onkeyup="_i(this.value,`/api/sacco-id/${this.value}`)"
+              />
               <br />
-              <label for="sn">Sacco ID:</label>
+              <label for="sn">Sacco Id:</label>
               <br />
-              <input type="text" class="-is" required />
+              <input
+                type="text"
+                class="-is -name -id"
+                name="sacco_id"
+                required
+              />
               <br />
               <label for="sn">Number of Members:</label>
               <br />
-              <input type="text" class="-is" required />
+              <input
+                type="number"
+                name="members_number"
+                class="-is"
+                required
+                onchange="_num(this.value)"
+              />
               <br />
-              <label for="sn">Minimum Saving:</label>
+              <label for="sn">Minimum Saving(UGX):</label>
               <br />
-              <input type="text" class="-is" required />
+              <input type="number" name="min_saving" class="-is" required />
               <br />
               <label for="sn">Meeting Day:</label>
               <br />
-              <select name="" class="-is" id="">
+              <select class="-is" id="" name="meeting_day">
                 <option value="" hidden>Select Day</option>
                 <option value="Sunday">Sunday</option>
                 <option value="Monday">Monday</option>
@@ -180,18 +202,28 @@
               <br />
               <label for="sn">Meeting Time:</label>
               <br />
-              <input type="text" class="-is" required placeholder="From" />
+              <input
+                type="time"
+                name="s_meeting_time"
+                class="-is"
+                required
+                placeholder="From"
+              />
               --
-              <input type="text" class="-is" required placeholder="To" />
+              <input
+                type="time"
+                name="e_meeting_time"
+                class="-is"
+                required
+                placeholder="To"
+              />
               <br />
               <label for="sn">Sacco Period(Months):</label>
               <br />
-              <input type="text" class="-is" required />
-              <br />
-              <button class="btn btn-sm">Next</button>
+              <input type="number" name="s_period" class="-is" required />
             </div>
-          </form>
-          <form class="basic-info">
+          </div>
+          <div class="basic-info">
             <h3 class="-sub-header">Add Sacco Members:</h3>
             <div class="b-ctr">
               <table class="-members">
@@ -201,279 +233,35 @@
                     <th>Name</th>
                     <th>Email.</th>
                     <th>Phone No.</th>
-                    <th>Role</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td class="_no">
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td class="_ph">
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td>
-                      <select
-                        name=""
-                        class="-is"
-                        id=""
-                        required
-                        style="width: 120px"
-                      >
-                        <option value="" hidden>Select Role</option>
-                        <option value="Sunday">Member</option>
-                        <option value="Monday">Treasurer</option>
-                        <option value="Tuesday">Mobiliser</option>
-                        <option value="Wednesday">Chairpeson</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="_no">
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td class="_ph">
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td>
-                      <select
-                        name=""
-                        class="-is"
-                        id=""
-                        required
-                        style="width: 120px"
-                      >
-                        <option value="" hidden>Select Role</option>
-                        <option value="Sunday">Member</option>
-                        <option value="Monday">Treasurer</option>
-                        <option value="Tuesday">Mobiliser</option>
-                        <option value="Wednesday">Chairpeson</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="_no">
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td class="_ph">
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td>
-                      <select
-                        name=""
-                        class="-is"
-                        id=""
-                        required
-                        style="width: 120px"
-                      >
-                        <option value="" hidden>Select Role</option>
-                        <option value="Sunday">Member</option>
-                        <option value="Monday">Treasurer</option>
-                        <option value="Tuesday">Mobiliser</option>
-                        <option value="Wednesday">Chairpeson</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="_no">
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td class="_ph">
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td>
-                      <select
-                        name=""
-                        class="-is"
-                        id=""
-                        required
-                        style="width: 120px"
-                      >
-                        <option value="" hidden>Select Role</option>
-                        <option value="Sunday">Member</option>
-                        <option value="Monday">Treasurer</option>
-                        <option value="Tuesday">Mobiliser</option>
-                        <option value="Wednesday">Chairpeson</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="_no">
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td class="_ph">
-                      <input
-                        type="text"
-                        class="-is"
-                        required
-                        style="width: 95%; margin: 5px auto"
-                      />
-                    </td>
-                    <td>
-                      <select
-                        name=""
-                        class="-is"
-                        id=""
-                        required
-                        style="width: 120px"
-                      >
-                        <option value="" hidden>Select Role</option>
-                        <option value="Sunday">Member</option>
-                        <option value="Monday">Treasurer</option>
-                        <option value="Tuesday">Mobiliser</option>
-                        <option value="Wednesday">Chairpeson</option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
+                <tbody class="tb"></tbody>
               </table>
             </div>
-          </form>
-          <form class="basic-info">
+          </div>
+          <div class="basic-info">
             <h3 class="-sub-header">Finish Up:</h3>
             <div class="b-ctr">
               <div class="-check">
-                <input type="checkbox" class="checkbox" />
+                <input
+                  type="checkbox"
+                  class="checkbox"
+                  name="_check_liscence"
+                  value="true"
+                  id="_lc"
+                />
                 <span class="-check-text">
                   I Agree to have read the liscence Agreement, the terms and
                   conditions assiociated with registering a sacco with My Sacco
                 </span>
               </div>
-              <button class="btn btn-sm">Register</button>
+              <button class="btn btn-sm _go">Register</button>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
         <div class="-progress">
           <ul class="-1 -bx">
-            <li>Add Sacco information</li>
-          </ul>
-          <ul class="-2 -bx">
-            <li>Add the Members</li>
+            <li>Your New Sacco Info.</li>
           </ul>
         </div>
       </main>
@@ -545,4 +333,78 @@
       </footer>
     </div>
   </body>
+  <script>
+    let _lc = document.querySelector("#_lc");
+    if (!_lc.checked) {
+      document.querySelector("._go").disabled = true;
+      document.querySelector("._go").style.opacity = "0.4";
+    }
+    _lc.addEventListener("change", (e) => {
+      if (_lc.checked) {
+        document.querySelector("._go").disabled = false;
+        document.querySelector("._go").style.opacity = "1";
+      } else {
+        document.querySelector("._go").disabled = true;
+        document.querySelector("._go").style.opacity = "0.4";
+      }
+      console.log(_lc.checked);
+    });
+    function _num(l) {
+      l = parseInt(l);
+      let rows = "";
+      for (let i = 1; i <= l; i++) {
+        rows += `<tr>
+                    <td class="_no">
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                        value='${i}'
+                        readonly
+                        name="member_number_${i}"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                        name="member_name_${i}"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="email"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                        name="member_email_${i}"
+                      />
+                    </td>
+                    <td class="_ph">
+                      <input
+                        type="text"
+                        class="-is"
+                        required
+                        style="width: 95%; margin: 5px auto"
+                        name="member_phone_${i}"
+                      />
+                    </td>
+                  </tr>`;
+      }
+      document.querySelector(".tb").innerHTML = rows;
+    }
+    const _i = (v, url) => {
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", url, true);
+      xhr.send();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          document.querySelector(".-id").value = xhr.responseText;
+        }
+      };
+    };
+  </script>
 </html>
